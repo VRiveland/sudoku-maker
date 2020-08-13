@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import * as components from './App.js';
 
-const myfirstelement = <h1>Let's make sudokus!</h1>
 
-ReactDOM.render(myfirstelement, document.getElementById('root'));
+ReactDOM.render(<components.Cell cellNumber="1" />, document.getElementById('root'));
