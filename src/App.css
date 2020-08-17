@@ -1,0 +1,35 @@
+.Active{
+    background-color: yellow;
+}
+
+.sudoku_cell{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border-style: solid;
+    border-width: 1px 0px 1px 1px;
+}
+
+.sudoku_cell_top{
+    border-top-width: 3px;
+}
+
+.sudoku_cell_right{
+    border-right-width: 3px;
+}
+
+.sudoku_cell_left{
+    border-left-width: 3px;
+}
+
+.sudoku_cell_bottom{
+    border-bottom-width: 3px;
+}
+
+.sudoku_cell_value{
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
