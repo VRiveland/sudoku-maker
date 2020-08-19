@@ -1,6 +1,5 @@
 import React from 'react';
-//import ReactDOM from 'react-dom';
-import './App.css';
+import './cell.css';
 
 class Cell extends React.Component{
   constructor(props) {
@@ -32,6 +31,8 @@ class Cell extends React.Component{
       case 1:
         classes += ' sudoku_cell_top'
         break;
+      case 3:
+      case 6:
       case 9:
         classes += ' sudoku_cell_bottom'
         break;
@@ -42,7 +43,9 @@ class Cell extends React.Component{
       case 1:
         classes += ' sudoku_cell_left'
         break;
-      case 9:
+        case 3:
+        case 6:
+        case 9:
         classes += ' sudoku_cell_right'
         break;
       default:
@@ -64,31 +67,4 @@ class Cell extends React.Component{
   }
 }
 
-class Row extends React.Component{
-  constructor(props) {
-    super(props);
-    this.state = {
-      rowNumber: 1
-    };
-  }
-  render(){
-    const myStyle = {
-      display: "flex",
-      alignItems: "stretch"
-    };
-    const cells = []
-    for(var i = 1; i<10; i++){
-      cells.push(<Cell cellNumber={i+(this.state.rowNumber*9)} rowNumber={this.state.rowNumber} columnNumber={i} />)
-    }
-    return(
-      <div style={myStyle}>
-        {cells}
-      </div>
-    )
-  }
-}
-
-export {
-    Cell,
-    Row,
-}
+export default Cell
