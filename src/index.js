@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Row from './components/row.js';
+import Grid from './components/grid.js';
 
 
-ReactDOM.render(<Row />, document.getElementById('root'));
+ReactDOM.render(<Grid />, document.getElementById('root'));
