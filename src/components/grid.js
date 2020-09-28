@@ -9,7 +9,7 @@ class Grid extends React.Component{
         }
         return(
           <div id="grid">
-            {rows}
+              {rows}
           </div>
         )
     }

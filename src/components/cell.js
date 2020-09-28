@@ -5,7 +5,7 @@ class Cell extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            //active: false,
+            active: false,
         };
     }
     static getDerivedStateFromProps(props, state) {
@@ -17,14 +17,13 @@ class Cell extends React.Component{
         };
     }
     select = () => {
+        this.setState({active: !this.state.active})
     }
-    handleKeyPress = (event) => {
+    handleKey = (event) => {
         this.setState({content: event.key})
     }
-    handleKeyDown = (event) => {
-        if(event.key === "Backspace"){
-            this.setState({content: ""})
-        }
+    handleBackspace = (event) => {
+        this.setState({content: ""})
     }
     render(){
         var classes = 'sudoku_cell'
@@ -52,11 +51,12 @@ class Cell extends React.Component{
             default:
                 break;
         }
+        if(this.state.active === true){
+            classes += ' active'
+        }
         return (
             <div 
             onClick={this.select}
-            onKeyPress={this.handleKeyPress}
-            onKeyDown={this.handleKeyDown}
             className={classes}
             tabIndex="0"
             >
